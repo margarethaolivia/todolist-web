@@ -6,19 +6,29 @@ const App = () => {
   const [tasks, setTasks] = useState([]);
 
   const handleToggle = (taskId) => {
-    setTasks(
-      tasks.map((task) =>
+    setTasks((prevTasks) => {
+      const updatedTasks = prevTasks.map((task) =>
         task.id === taskId ? { ...task, completed: !task.completed } : task
-      )
-    );
+      );
+      return sortTasks(updatedTasks);
+    });
   };
 
   const handleDelete = (taskId) => {
-    setTasks(tasks.filter((task) => task.id !== taskId));
+    setTasks((prevTasks) => prevTasks.filter((task) => task.id !== taskId));
   };
 
   const handleSubmit = (newTask) => {
-    setTasks([{ id: Date.now(), text: newTask, completed: false }, ...tasks]);
+    setTasks((prevTasks) => [
+      { id: Date.now(), text: newTask, completed: false },
+      ...prevTasks,
+    ]);
+  };
+
+  const sortTasks = (tasksArray) => {
+    const incompleteTasks = tasksArray.filter((task) => !task.completed);
+    const completedTasks = tasksArray.filter((task) => task.completed);
+    return [...incompleteTasks, ...completedTasks];
   };
 
   return (
