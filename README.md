@@ -1,8 +1,13 @@
 # Todolist Website
 
+<div style="display: flex;">
+    <img src="./public/screenshots/screenshot1.JPG" alt="Todolist Website Screenshot"  style="width: 45%; margin-right: 10px;">
+    <img src="./public/screenshots/screenshot2.JPG" alt="Todolist Website Screenshot" style="width: 45%">
+</div>
+
 ## About the Project
 
-This is a simple todolist website built using React and Tailwind CSS, allowing users to manage their tasks efficiently. With a user-friendly interface, this app enables users to seamlessly add, complete, and delete tasks on the go.
+This is a simple todolist website built using React and Tailwind CSS, allowing users to manage their tasks efficiently. With a user-friendly interface, this website enables users to seamlessly add, complete, and delete tasks on the go.
 
 ## Key Features
 
